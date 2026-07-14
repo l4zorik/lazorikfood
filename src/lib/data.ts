@@ -1,6 +1,8 @@
 import type {
   BlogPost,
   DayPlan,
+  Drink,
+  DrinkCategory,
   FridgeItem,
   InventoryItem,
   MealPrepRecipe,
@@ -37,6 +39,192 @@ export const menuItems: MenuItem[] = [
   { id: "6", name: "Steak Ribeye", category: "Hlavní jídla", price: 349, cost: 145, stock: 8, available: true, image: "🥩", description: "300g ribeye steak, pečené brambory, omáčka" },
   { id: "7", name: "Pasta Carbonara", category: "Těstoviny", price: 169, cost: 48, stock: 0, available: false, image: "🍝", description: "Guanciale, vejce, pecorino, černý pepř" },
   { id: "8", name: "Espresso", category: "Nápoje", price: 45, cost: 8, stock: 200, available: true, image: "☕", description: "Dvojité espresso z pražených zrn" },
+];
+
+export const drinkCategories: DrinkCategory[] = ["Bez alkoholu", "Ovocné", "Ledové", "Fresh", "Top chuť"];
+
+export const drinks: Drink[] = [
+  {
+    id: "d1", name: "Domácí limonáda", category: "Bez alkoholu", price: 59,
+    description: "Čerstvá citronová limonáda s mátou a medem", emoji: "🍋",
+    ingredients: ["citron", "máta", "med", "sodová voda"], available: true,
+  },
+  {
+    id: "d2", name: "Pomerančový džus", category: "Bez alkoholu", price: 49,
+    description: "Čerstvě vymačkaný pomerančový džus", emoji: "🍊",
+    ingredients: ["pomeranč"], available: true,
+  },
+  {
+    id: "d3", name: "Jablečný mošt", category: "Bez alkoholu", price: 45,
+    description: "Jablečný mošt z českých jablek", emoji: "🧃",
+    ingredients: ["jablko"], available: true,
+  },
+  {
+    id: "d4", name: "Malinová sodovka", category: "Bez alkoholu", price: 55,
+    description: "Domácí malinová sodovka s limetkou", emoji: "🫐",
+    ingredients: ["malina", "limetka", "sodová voda"], available: true,
+  },
+  {
+    id: "d5", name: "Ananasový džus", category: "Bez alkoholu", price: 55,
+    description: "Sladký ananasový džus s kousky ovoce", emoji: "🍍",
+    ingredients: ["ananas", "pomeranč"], available: true,
+  },
+  {
+    id: "d6", name: "Jahodový koktejl", category: "Ovocné", price: 69,
+    description: "Krémový jahodový koktejl s mlékem", emoji: "🍓",
+    ingredients: ["jahoda", "mléko", "vanilka"], available: true,
+  },
+  {
+    id: "d7", name: "Borůvkové smoothie", category: "Ovocné", price: 75,
+    description: "Husté borůvkové smoothie s jogurtem", emoji: "🫐",
+    ingredients: ["borůvka", "jogurt", "med"], available: true,
+  },
+  {
+    id: "d8", name: "Mango fresh", category: "Ovocné", price: 79,
+    description: "Exotické mango fresh s passsion fruit", emoji: "🥭",
+    ingredients: ["mango", "passion fruit", "limetka"], available: true,
+  },
+  {
+    id: "d9", name: "Broskev s mátou", category: "Ovocné", price: 65,
+    description: "Osvěžující broskev s čerstvou mátou", emoji: "🍑",
+    ingredients: ["broskev", "máta", "limetka"], available: true,
+  },
+  {
+    id: "d10", name: "Vodní meloun fresh", category: "Ovocné", price: 69,
+    description: "Šťavnatý vodní meloun s limetkou", emoji: "🍉",
+    ingredients: ["vodní meloun", "limetka", "máta"], available: true,
+  },
+  {
+    id: "d11", name: "Ledová tříšť cola", category: "Ledové", price: 49,
+    description: "Rozdrcený led s colovým sirupem", emoji: "🥤",
+    ingredients: ["led", "cola sirup"], available: true,
+  },
+  {
+    id: "d12", name: "Ledová tříšť jahoda", category: "Ledové", price: 55,
+    description: "Rozdrcený led s jahodovým sirupem", emoji: "🍓",
+    ingredients: ["led", "jahodový sirup", "smetana"], available: true,
+  },
+  {
+    id: "d13", name: "Frappé karamel", category: "Ledové", price: 79,
+    description: "Ledová káva s karamelovým sirupem", emoji: "☕",
+    ingredients: ["espresso", "led", "karamel", "mléko"], available: true,
+  },
+  {
+    id: "d14", name: "Mražený mojito", category: "Ledové", price: 69,
+    description: "Bezalkoholový mražený mojito s limetkou", emoji: "🌿",
+    ingredients: ["limetka", "máta", "led", "sodová voda"], available: true,
+  },
+  {
+    id: "d15", name: "Ledový čaj broskev", category: "Ledové", price: 55,
+    description: "Domácí ledový čaj s broskví", emoji: "🧊",
+    ingredients: ["čaj", "broskev", "led", "med"], available: true,
+  },
+  {
+    id: "d16", name: "Pomeranč fresh", category: "Fresh", price: 69,
+    description: "Čerstvě lisovaný pomeranč fresh", emoji: "🍊",
+    ingredients: ["pomeranč"], available: true,
+  },
+  {
+    id: "d17", name: "Grapefruit fresh", category: "Fresh", price: 69,
+    description: "Osvěžující grapefruit fresh", emoji: "🍋",
+    ingredients: ["grapefruit", "med"], available: true,
+  },
+  {
+    id: "d18", name: "Mrkvový fresh", category: "Fresh", price: 59,
+    description: "Vitamínový mrkvový fresh s jablkem", emoji: "🥕",
+    ingredients: ["mrkev", "jablko", "zázvor"], available: true,
+  },
+  {
+    id: "d19", name: "Jablečný fresh s zázvorem", category: "Fresh", price: 65,
+    description: "Jablečný fresh s čerstvým zázvorem", emoji: "🍎",
+    ingredients: ["jablko", "zázvor", "citron"], available: true,
+  },
+  {
+    id: "d20", name: "Zelený fresh", category: "Fresh", price: 75,
+    description: "Zelený fresh s celerem a špenátem", emoji: "🥬",
+    ingredients: ["celer", "špenát", "jablko", "zázvor"], available: true,
+  },
+  {
+    id: "d21", name: "Signature Berry Blast", category: "Top chuť", price: 89,
+    description: "Signature mix lesního ovoce s limetkou", emoji: "🫐",
+    ingredients: ["borůvka", "malina", "ostružina", "limetka"], available: true,
+  },
+  {
+    id: "d22", name: "Tropical Sunset", category: "Top chuť", price: 95,
+    description: "Exotická exploze manga a kokosu", emoji: "🌴",
+    ingredients: ["mango", "kokos", "ananas", "passion fruit"], available: true,
+  },
+  {
+    id: "d23", name: "Watermelon Mint", category: "Top chuť", price: 85,
+    description: "Vodní meloun s mátou a růžovým pepřem", emoji: "🍉",
+    ingredients: ["vodní meloun", "máta", "růžový pepř", "limetka"], available: true,
+  },
+  {
+    id: "d24", name: "Cucumber Lime", category: "Top chuť", price: 79,
+    description: "Okurkový fresh s limetkou a zázvorem", emoji: "🥒",
+    ingredients: ["okurka", "limetka", "zázvor", "med"], available: true,
+  },
+  {
+    id: "d25", name: "Pink Dragon", category: "Top chuť", price: 99,
+    description: "Pitaya a jahodový fresh s kokosovým mlékem", emoji: "🐉",
+    ingredients: ["pitaya", "jahoda", "kokosové mléko", "banán"], available: true,
+  },
+
+  {
+    id: "d26", name: "Jahodovo-malinová tříšť", category: "Ledové", price: 65,
+    description: "Rozdrcený led s jahodami a malinami", emoji: "🍓",
+    ingredients: ["jahoda", "malina", "led", "limetka"], available: true,
+  },
+  {
+    id: "d27", name: "Mango-marakujová tříšť", category: "Ledové", price: 75,
+    description: "Exotická tříšť z manga a marakuji", emoji: "🥭",
+    ingredients: ["mango", "marakuja", "led", "pomeranč"], available: true,
+  },
+  {
+    id: "d28", name: "Borůvkovo-limetková tříšť", category: "Ledové", price: 69,
+    description: "Osvěžující borůvková tříšť s limetkou", emoji: "🫐",
+    ingredients: ["borůvka", "limetka", "led", "med"], available: true,
+  },
+  {
+    id: "d29", name: "Ananasovo-kokosová tříšť", category: "Ledové", price: 75,
+    description: "Tropická tříšť s ananasem a kokosem", emoji: "🍍",
+    ingredients: ["ananas", "kokosové mléko", "led", "limetka"], available: true,
+  },
+  {
+    id: "d30", name: "Melounová tříšť s mátou", category: "Ledové", price: 65,
+    description: "Šťavnatý meloun rozdrcený s ledem a mátou", emoji: "🍉",
+    ingredients: ["vodní meloun", "máta", "led", "limetka"], available: true,
+  },
+  {
+    id: "d31", name: "Broskev-meruňková tříšť", category: "Ledové", price: 69,
+    description: "Sladká broskev-meruňková tříšť", emoji: "🍑",
+    ingredients: ["broskev", "meruňka", "led", "vanilka"], available: true,
+  },
+  {
+    id: "d32", name: "Višňová tříšť", category: "Ledové", price: 65,
+    description: "Kyselá višňová tříšť s kousky ovoce", emoji: "🍒",
+    ingredients: ["višně", "led", "třtinový cukr", "limetka"], available: true,
+  },
+  {
+    id: "d33", name: "Citronová tříšť s zázvorem", category: "Ledové", price: 59,
+    description: "Osvěžující citronová tříšť s čerstvým zázvorem", emoji: "🍋",
+    ingredients: ["citron", "zázvor", "led", "med"], available: true,
+  },
+  {
+    id: "d34", name: "Tropical Ice Blast", category: "Ledové", price: 79,
+    description: "Exploze tropického ovoce v ledové tříšti", emoji: "🌴",
+    ingredients: ["mango", "ananas", "kokos", "led", "passion fruit"], available: true,
+  },
+  {
+    id: "d35", name: "Berry Ice Crush", category: "Ledové", price: 75,
+    description: "Mix lesních plodů v ledové tříšti", emoji: "🫐",
+    ingredients: ["borůvka", "malina", "ostružina", "led", "jahoda"], available: true,
+  },
+  {
+    id: "d36", name: "Limonáda s ledem", category: "Ledové", price: 65,
+    description: "Klasická domácí limonáda s kostkami ledu a mátou", emoji: "🍋",
+    ingredients: ["citron", "máta", "led", "med", "sodová voda"], available: true,
+  },
 ];
 
 export const orders: Order[] = [

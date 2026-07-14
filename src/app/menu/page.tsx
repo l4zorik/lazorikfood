@@ -1,9 +1,15 @@
+"use client";
+
+import { useState } from "react";
 import { Header } from "@/components/layout/Header";
+import { DrinkModal } from "@/components/drink/DrinkModal";
 import { menuItems, categories } from "@/lib/data";
 import { formatCurrency, cn } from "@/lib/utils";
-import { Plus, Search } from "lucide-react";
+import { Plus, Search, Wine } from "lucide-react";
 
 export default function MenuPage() {
+  const [showDrinks, setShowDrinks] = useState(false);
+
   return (
     <>
       <Header title="Menu" subtitle="Správa jídelního lístku a cen" />
@@ -34,12 +40,21 @@ export default function MenuPage() {
                 className="rounded-xl border border-stone-200 py-2.5 pl-10 pr-4 text-sm outline-none focus:border-brand-300 focus:ring-2 focus:ring-brand-100"
               />
             </div>
+            <button
+              onClick={() => setShowDrinks(true)}
+              className="flex items-center gap-2 rounded-xl bg-sky-500 px-4 py-2.5 text-sm font-medium text-white shadow-lg shadow-sky-500/25 transition hover:bg-sky-600"
+            >
+              <Wine className="h-4 w-4" />
+              Nápoje
+            </button>
             <button className="flex items-center gap-2 rounded-xl bg-brand-500 px-4 py-2.5 text-sm font-medium text-white shadow-lg shadow-brand-500/25 transition hover:bg-brand-600">
               <Plus className="h-4 w-4" />
               Přidat položku
             </button>
           </div>
         </div>
+
+        {showDrinks && <DrinkModal onClose={() => setShowDrinks(false)} />}
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {menuItems.map((item) => (

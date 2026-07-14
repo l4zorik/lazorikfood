@@ -102,6 +102,19 @@ export interface ShoppingItem {
   inFridge: boolean;
 }
 
+export type DrinkCategory = "Bez alkoholu" | "Ovocné" | "Ledové" | "Fresh" | "Top chuť";
+
+export interface Drink {
+  id: string;
+  name: string;
+  category: DrinkCategory;
+  price: number;
+  description: string;
+  emoji: string;
+  ingredients: string[];
+  available: boolean;
+}
+
 export interface BlogPost {
   slug: string;
   title: string;
